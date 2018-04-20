@@ -13,39 +13,44 @@ response = Net::HTTP.get(uri)
 # parse json data
 response_parsed = JSON.parse(response)
 
-# sunrise
-# convert to Eastern Daylight Time, and print
-hour = response_parsed["results"]["sunrise"][0...2].to_i
-hour = (hour - 4)
-response_parsed["results"]["sunrise"][0...2] = hour.to_s
-
-print "Sunrise in Brooklyn is at:", response_parsed["results"]["sunrise"] , "\n"
-
-
-# sunset
-# convert to Eastern Daylight Time, and print
-hour = response_parsed["results"]["sunset"][0...2].to_i
-hour = (hour - 4)
-response_parsed["results"]["sunset"][0...2] = hour.to_s
-
-print "Sunset in Brooklyn is at:", response_parsed["results"]["sunset"] , "\n"
+# print location
+print "******** Solar Events, Brooklyn EDT ********\n"
 
 # nautical twilight begins
 # convert to Eastern Daylight Time, and print
-print response_parsed["results"]["nautical_twilight_begin"]
-hour = response_parsed["results"]["nautical_twilight_begin"][0...2].to_i
+r_index = response_parsed["results"]["nautical_twilight_begin"].index(':')
+hour = response_parsed["results"]["nautical_twilight_begin"][0...r_index].to_i
 hour = (hour - 4)
-response_parsed["results"]["nautical_twilight_begin"][0...2] = hour.to_s
+response_parsed["results"]["nautical_twilight_begin"][0...r_index] = hour.to_s
 
-print "Nautical twilight in Brooklyn begins at:", response_parsed["results"]["nautical_twilight_begin"] , "\n"
+print "Nautical twilight begins at: ", response_parsed["results"]["nautical_twilight_begin"] , "\n"
+
+# sunrise
+# convert to Eastern Daylight Time, and print
+r_index = response_parsed["results"]["sunrise"].index(':')
+hour = response_parsed["results"]["sunrise"][0...r_index].to_i
+hour = (hour - 4)
+response_parsed["results"]["sunrise"][0...r_index] = hour.to_s
+
+print "Sunrise is at: ", response_parsed["results"]["sunrise"] , "\n"
+
+# sunset
+# convert to Eastern Daylight Time, and print
+r_index = response_parsed["results"]["sunset"].index(':')
+hour = response_parsed["results"]["sunset"][0...r_index].to_i
+hour = (hour - 4)
+response_parsed["results"]["sunset"][0...r_index] = hour.to_s
+
+print "Sunset is at: ", response_parsed["results"]["sunset"] , "\n"
+
 
 # nautical twilight ends
 # convert to Eastern Daylight Time, and print
-hour = response_parsed["results"]["nautical_twilight_end"][0...2].to_i
+r_index = response_parsed["results"]["nautical_twilight_end"].index(':')
+hour = response_parsed["results"]["nautical_twilight_end"][0...r_index].to_i
 hour = (hour - 4)
-response_parsed["results"]["nautical_twilight_end"][0...2] = hour.to_s
+response_parsed["results"]["nautical_twilight_end"][0...r_index] = hour.to_s
 
-print "Nautical twilight in Brooklyn ends at:", response_parsed["results"]["nautical_twilight_end"] , "\n"
-
+print "Nautical twilight ends at: ", response_parsed["results"]["nautical_twilight_end"] , "\n"
 
 
