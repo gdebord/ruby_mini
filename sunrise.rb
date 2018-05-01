@@ -1,8 +1,6 @@
 require "net/http"
 require 'json'
 
-# Notes: almost working. Using formatted data, UTC hours show up as 1 or 2 digits, depending. Use unformatted? Parse on : ?
-
 # build url
 url = "https://api.sunrise-sunset.org/json?lat=40.7283&lng=-73.9472"
 uri = URI(url)
