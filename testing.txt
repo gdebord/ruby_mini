@@ -1,0 +1,7 @@
+ac02v905wjcpr:ruby_mini bpierce$ ruby sunrise.rb
+{"results"=>{"sunrise"=>"9:50:48 AM", "sunset"=>"11:54:24 PM", "solar_noon"=>"4:52:36 PM", "day_length"=>"14:03:36", "civil_twilight_begin"=>"9:20:54 AM", "civil_twilight_end"=>"12:24:18 AM", "nautical_twilight_begin"=>"8:44:11 AM", "nautical_twilight_end"=>"1:01:00 AM", "astronomical_twilight_begin"=>"8:04:16 AM", "astronomical_twilight_end"=>"1:40:55 AM"}, "status"=>"OK"}******** Solar Events, Brooklyn EDT ********
+Nautical twilight begins at: 4:44:11 AM
+Sunrise is at: 5:50:48 AM
+Sunset is at: 7:54:24 PM
+Nautical twilight ends at: -3:01:00 AM
+ac02v905wjcpr:ruby_mini bpierce$
