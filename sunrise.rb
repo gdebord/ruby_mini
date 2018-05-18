@@ -39,7 +39,8 @@ print "Sunrise is at: ", response_parsed["results"]["sunrise"] , "\n"
 r_index = response_parsed["results"]["sunset"].index(':')
 hour = response_parsed["results"]["sunset"][0...r_index].to_i
 # sometimes sunset in UTC is the next day, so need to change AM to PM
-if (hour - 4) != (hour - 4) % 12
+#if (hour - 4) != (hour - 4) % 12 -- removed this code, as it wasn't working
+if [12, 1, 2, 3].include? hour:
 	response_parsed["results"]["sunset"][-2..-1] = "PM"
 end
 hour = (hour - 4) % 12
