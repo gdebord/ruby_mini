@@ -10,8 +10,8 @@ response = Net::HTTP.get(uri)
 
 # parse json data
 response_parsed = JSON.parse(response)
-print response_parsed # testing
-print "\n", response_parsed["results"]["nautical_twilight_end"][-2..-1] , "\n" #testing
+#print response_parsed # testing
+#print "\n", response_parsed["results"]["nautical_twilight_end"][-2..-1] , "\n" #testing
 
 # print location
 print "******** Solar Events, Brooklyn EDT ********\n"
